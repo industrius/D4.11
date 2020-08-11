@@ -1,0 +1,15 @@
+{% extends "wrapper.html"%}
+{% block content%}
+{% for publisher in publishers %}
+<ul class="list-group">
+    <li class="list-group-item">
+        {{ publisher.title }}
+        <ul class="list-group">
+            {% for book in publisher.books.all %}
+                <li class="list-group-item"> {{ book.title }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+{% endfor %}
+{% endblock %}
